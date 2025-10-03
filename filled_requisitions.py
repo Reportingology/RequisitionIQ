@@ -8,5 +8,4 @@ filled_requisitions = pd.read_csv(url_filled_requisitions)
 
 def print_filled_requisitions(df):
     """Display the filled requisitions DataFrame in Streamlit."""
-    import streamlit as st
     st.write(df)
