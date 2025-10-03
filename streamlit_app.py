@@ -14,12 +14,12 @@ with st.form("req_form"):
     col1, col2, col3, col4, col5, col6 = st.columns(6)
 
     with col1:
-        st.markdown("**Requisition ID**")
-        st.text_input("", value="REQ-IQ-463372", disabled=True, key="req_id")
+        st.markdown("**Requisition Number**")
+        st.text_input("", value="R01854", disabled=True, key="req_id")
 
     with col2:
-        st.markdown("**Date of First Screen**")
-        date_first_screen = st.date_input("", value=datetime.date.today(), key="date_first_screen")
+        st.markdown("**Days to First Screen**")
+        date_first_screen = st.number_input("", min_value=0, step=1, key="days_to_first_screen")
 
     with col3:
         st.markdown("**Total Applicants**")
