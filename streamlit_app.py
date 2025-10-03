@@ -1,6 +1,8 @@
 import streamlit as st
 import datetime
 
+from filled_requisitions import print_filled_requisitions
+
 st.title("RequisitionIQ")
 st.write(
     "At the center of a stalled requisition is a conversation that never happened. "
