@@ -1,12 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# Load your CSV (from the uploaded file, but for GitHub you’d use pd.read_csv(url))
-df = pd.read_csv("filled_requisitions.csv")
-
-# Clean up column names just in case
-df.columns = df.columns.str.strip().str.lower()
-
 st.title("RequisitionIQ Input Form")
 
 with st.form("req_form"):
