@@ -46,3 +46,5 @@ if submitted:
     st.write(f"📑 Reviewed in X Days: {reviewed_in_x_days}")
     st.write(f"🎤 Total Interviews: {total_interviews}")
     st.write(f"⏳ Time to Fill: {time_to_fill} days")
+
+st.write(print_filled_requisitions)
