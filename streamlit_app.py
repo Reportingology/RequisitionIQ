@@ -1,32 +1,48 @@
 import streamlit as st
-import pandas as pd
+import datetime
 
-st.title("RequisitionIQ Input Form")
+st.title("RequisitionIQ")
+st.write(
+    "At the center of a stalled requisition is a conversation that never happened. "
+    "ReqIQ starts it—before it's too late."
+)
+
+st.subheader("Requisition Input Form")
 
 with st.form("req_form"):
-    col1, col2, col3, col4, col5 = st.columns(5)
+    # 6 columns for left-to-right layout
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
 
     with col1:
-        recruiter = st.selectbox("Recruiter", sorted(df["recruiter"].dropna().unique()))
+        st.markdown("**Requisition ID**")
+        st.text_input("", value="REQ-IQ-463372", disabled=True, key="req_id")
 
     with col2:
-        job_group = st.selectbox("Job Group", sorted(df["job_group"].dropna().unique()))
+        st.markdown("**Date of First Screen**")
+        date_first_screen = st.date_input("", value=datetime.date.today(), key="date_first_screen")
 
     with col3:
-        job_family = st.selectbox("Job Family", sorted(df["job_family"].dropna().unique()))
+        st.markdown("**Total Applicants**")
+        total_applicants = st.number_input("", min_value=0, step=1, key="total_applicants")
 
     with col4:
-        country = st.selectbox("Country", sorted(df["country"].dropna().unique()))
+        st.markdown("**Reviewed in X Days**")
+        reviewed_in_x_days = st.number_input("", min_value=0, step=1, key="reviewed")
 
     with col5:
-        job_level = st.selectbox("Job Level", sorted(df["job_level"].dropna().unique()))
+        st.markdown("**Total Interviews**")
+        total_interviews = st.number_input("", min_value=0, step=1, key="interviews")
+
+    with col6:
+        st.markdown("**Time to Fill (days)**")
+        time_to_fill = st.number_input("", min_value=0, step=1, key="time_to_fill")
 
     submitted = st.form_submit_button("Submit")
 
 if submitted:
-    st.write("### Selected Filters")
-    st.write(f"👤 Recruiter: {recruiter}")
-    st.write(f"📂 Job Group: {job_group}")
-    st.write(f"🏷️ Job Family: {job_family}")
-    st.write(f"🌍 Country: {country}")
-    st.write(f"📊 Job Level: {job_level}")
+    st.write("### Results")
+    st.write(f"📅 Date of First Screen: {date_first_screen}")
+    st.write(f"👥 Total Applicants: {total_applicants}")
+    st.write(f"📑 Reviewed in X Days: {reviewed_in_x_days}")
+    st.write(f"🎤 Total Interviews: {total_interviews}")
+    st.write(f"⏳ Time to Fill: {time_to_fill} days")
