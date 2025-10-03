@@ -6,5 +6,5 @@ import datetime
 url_filled_requisitions = "https://raw.githubusercontent.com/Reportingology/RequisitionIQ/refs/heads/main/requisitions/filled_requisitions.csv"
 filled_requisitions = pd.read_csv(url_filled_requisitions)
 
-def print_filled_requisitions(filled_requisitions):
+def print_filled_requisitions():
   print(filled_requisitions)
