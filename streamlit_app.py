@@ -49,4 +49,4 @@ if submitted:
     st.write(f"🎤 Total Interviews: {total_interviews}")
     st.write(f"⏳ Time to Fill: {time_to_fill} days")
 
-print_filled_requisitions
+print_filled_requisitions(df_filled_requisitions)
