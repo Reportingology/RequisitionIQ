@@ -9,3 +9,8 @@ filled_requisitions = pd.read_csv(url_filled_requisitions)
 def print_filled_requisitions():
     """Display the filled requisitions DataFrame in Streamlit."""
     st.write(filled_requisitions)
+
+def get_filled_requisitions():
+    """Display the filled requisitions DataFrame in Streamlit."""
+    return
+    filled_requisitions
